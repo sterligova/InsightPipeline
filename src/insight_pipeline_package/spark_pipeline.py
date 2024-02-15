@@ -1,4 +1,14 @@
 
-def extract():
-    print('Data extracted successfully')
+def ingestion():
+    print('Data loaded successfully')
     return
+
+def transformation():
+    print('Data transformed successfully')
+    return
+
+
+def execute():
+    ingestion()
+    transformation()
+
