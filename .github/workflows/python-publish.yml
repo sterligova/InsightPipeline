@@ -31,4 +31,4 @@ jobs:
       - name: Publish package
         run: |
           python3 -m pip install --upgrade twine
-          python3 -m twine upload --repository insight_pipeline_test dist/*
+          python3 -m twine upload --repository testpypi dist/*
