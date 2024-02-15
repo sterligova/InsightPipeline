@@ -41,7 +41,7 @@ jobs:
       runs-on: ubuntu-latest
       environment:
         name: testpypi
-        url: https://test.pypi.org/p/insight-pipeline
+        url: https://test.pypi.org/p/insight_pipeline
       permissions:
         id-token: write  # IMPORTANT: mandatory for trusted publishing
       steps:
