@@ -6,6 +6,6 @@ findspark.find()
 
 from pyspark.sql import SparkSession
 
-def get_test_data():
+def get_test_data(file):
     spark_session = SparkSession.builder.appName('test').getOrCreate()
-    return spark_session.read.csv('data/raw/2024-02-13/Book1.csv', header=True, inferSchema=True)
+    return spark_session.read.csv(file, header=True, inferSchema=True)

@@ -11,10 +11,7 @@ def process_data(raw_data):
             when(col(column) == "", None).otherwise(col(column)))
 
     # Drop rows with mostly Null values
-    # processed_data = processed_data.na.drop(how='any')
-        
-    # Drop rows with more than 50% null values
-    #processed_data = processed_data.na.drop(thresh=len(processed_data.columns) / 2)
+    processed_data = processed_data.na.drop()
 
     return processed_data
 
