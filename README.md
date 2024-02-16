@@ -20,11 +20,11 @@ python3 ./run.py
 2. Create git tag
 
 ```bash
-git tag 0.0.3
+git tag 0.0.x
 ```
 
 3. Push tag to github
 
-```bah
+```bash
 git push origin --tags
 ```
