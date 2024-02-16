@@ -7,13 +7,19 @@ findspark.find()
 
 from src.insight_pipeline_package.utils import stop_active_spark_session
 from src.insight_pipeline_package.spark_pipeline import run_pipeline
-
+from src.insight_pipeline_package.pipeline_config import PipelineConfig
 
 current_dir = os.getcwd()
 
-input_data_path =  f'{current_dir}/data/raw/2024-02-13/Book1.csv'
-output_path = f'{current_dir}/data/ods/2024-02-13/'
+config = PipelineConfig()
+config.input_data_file = f'{current_dir}/data/raw/2024-02-13/Book1.csv'
+config.output_ods_path = f'{current_dir}/data/ods/'
+config.output_dml_path = f'{current_dir}/data/dml/2024-02-13/'
+config.agg_column = 'Revenue'
+config.agg_column_name = 'TotalRevenue'
 
-run_pipeline(input_data_path, output_path)
+
+
+run_pipeline(config)
 
 stop_active_spark_session()
