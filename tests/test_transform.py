@@ -1,5 +1,6 @@
 from create_test_session import get_test_data
-from src.insight_pipeline_package.transform import process_raw_data
+from src.insight_pipeline_package.pipeline_config import PipelineConfig
+from src.insight_pipeline_package.transform import process_raw_data, process_odl_data
 from src.insight_pipeline_package.utils import stop_active_spark_session
 
 def test_process_data_removes_duplicates():
@@ -12,6 +13,23 @@ def test_process_data_removes_duplicates():
 
     # Assert
     assert processed_df.count() == filtered_columns_count
+    
+    stop_active_spark_session()
+
+
+def test_process_data_removes_aggregate():
+    # Arrange
+    data = get_test_data('data/raw/2024-02-14/Book2.csv')
+    aggregated_columns_count=5
+    config = PipelineConfig()
+    config.agg_column = 'Revenue'
+    config.agg_column_name = 'TotalRevenue'
+
+    # Act
+    processed_df = process_odl_data(data, config)
+
+    # Assert
+    assert processed_df.count() == aggregated_columns_count
     
     stop_active_spark_session()
 
