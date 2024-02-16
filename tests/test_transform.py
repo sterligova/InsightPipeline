@@ -1,12 +1,6 @@
-import findspark
-
-# Locate spark testing
-findspark.init()
-findspark.find()
-
+from create_test_session import get_test_data
 from src.insight_pipeline_package.transform import process_data
 from src.insight_pipeline_package.utils import stop_active_spark_session
-from create_test_session import get_test_data
 
 def test_process_data_removes_duplicates():
     # Arrange

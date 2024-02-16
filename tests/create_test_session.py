@@ -1,3 +1,9 @@
+import findspark
+
+# Locate spark testing
+findspark.init()
+findspark.find()
+
 from pyspark.sql import SparkSession
 
 def get_test_data():
