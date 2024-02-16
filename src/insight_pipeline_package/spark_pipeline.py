@@ -11,7 +11,7 @@ def run_pipeline(input_data_file, output_path):
        print('Data loaded')
 
        print('Start processing data...')
-       processed_data = process_data(raw_data, spark)
+       processed_data = process_data(raw_data)
        print('Data processed')
        
        print('Start uploading data...')

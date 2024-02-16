@@ -1,7 +1,7 @@
 from pyspark.sql.functions import col, when
 
 
-def process_data(raw_data, spark):
+def process_data(raw_data):
     # Remove duplicates
     processed_data = raw_data.dropDuplicates()
 
