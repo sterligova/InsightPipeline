@@ -9,6 +9,7 @@ python3 -m build
 ```
 
 ## Run in local
+Note, you need to install `spark`, `java 17` and `hadoop` locally
 
 ```bash
 python3 ./run.py 
