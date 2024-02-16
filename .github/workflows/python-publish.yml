@@ -61,13 +61,16 @@ jobs:
           spark-version: '3.5.0'
           hadoop-version: '3'
       
-      - run: python3 run.py
+      - run: |
+          pip install findspark
+          python3 run.py
   
   publish-test-pypi:
       if: startsWith(github.ref, 'refs/tags/')  # only publish to Test PyPI on tag pushes
       name: Publish Python 🐍 distribution 📦 to TestPyPI
       needs:
       - build
+      - run-spark-test
       runs-on: ubuntu-latest
       environment:
         name: testpypi
