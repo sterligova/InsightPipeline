@@ -62,7 +62,7 @@ jobs:
           hadoop-version: '3'
       
       - run: |
-          pip install findspark
+          pip install -r 'requirements.txt'
           python3 run.py
   
   publish-test-pypi:
