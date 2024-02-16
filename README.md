@@ -11,7 +11,7 @@ python3 -m build
 ## Run in local
 
 ```bash
-python3 ./run.py
+python3 ./run.py 
 ```
 
 ## Publish package
