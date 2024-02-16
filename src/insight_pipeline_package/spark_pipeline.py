@@ -1,28 +1,7 @@
-from pyspark.sql import SparkSession
-
-
-def get_spark_session() -> SparkSession:
-    session = SparkSession.builder \
-                    .appName("AppName") \
-                    .getOrCreate()
-    return session
-
-
-def read_data(input_data_file, spark):
-		result = spark\
-		    .read\
-			.csv(input_data_file, header=True, inferSchema=True)
-		return result
-
-
-def process_data(raw_data):
-    # process data here
-    return raw_data
-
-
-def write_data(processed_data, output_path):
-    processed_data.write.csv(output_path)
-
+from src.insight_pipeline_package.ingest import read_data
+from src.insight_pipeline_package.load import write_data
+from src.insight_pipeline_package.transform import process_data
+from src.insight_pipeline_package.utils import get_spark_session
 
 def run_pipeline(input_data_file, output_path):
        spark = get_spark_session()
