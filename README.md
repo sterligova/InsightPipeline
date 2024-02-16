@@ -1,6 +1,17 @@
-# InsightPipeline
+# Insight Pipeline
 
-Spark pipeline
+Spark ETL pipeline
+
+📦 Pypi: https://test.pypi.org/project/insight-pipeline/
+
+## Data organization
+
+```
+data
+ --raw (bronze data)
+ --ods (Operational data store, silver data)
+ --dml (gold data)
+```
 
 ## Build package
 
