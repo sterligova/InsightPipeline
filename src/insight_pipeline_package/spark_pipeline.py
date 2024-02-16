@@ -5,6 +5,12 @@ from src.insight_pipeline_package.transform import process_raw_data, process_odl
 from src.insight_pipeline_package.utils import get_spark_session
 
 def run_pipeline(config: PipelineConfig):
+       """
+    All stages of the pipeline execution 
+    
+    Args:
+        : 
+    """
        spark = get_spark_session(config.session_name)
 
        print(f'Start reading data from: {config.input_data_file} ...')

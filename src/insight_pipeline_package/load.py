@@ -1,2 +1,9 @@
-def write_data(processed_data, output_path):
-    processed_data.write.mode("overwrite").csv(output_path)
+def write_data(data, output_path):
+    """
+    Writing data to ods or dml layers 
+    
+    Args:
+        data:  DataFrame
+        output_path: output files location
+    """
+    data.write.mode("overwrite").parquet(output_path)
