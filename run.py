@@ -1,3 +1,11 @@
-from src.insight_pipeline_package.spark_pipeline import execute
+import os
+import findspark
+findspark.init()
+findspark.find()
 
-execute()
+from src.insight_pipeline_package.spark_pipeline import run_pipeline
+current_dir = os.getcwd()
+input_data_path =  f'{current_dir}/data/raw/2024-02-13/Book1.csv'
+output_path = f'{current_dir}/data/ods/2024-02-13/'
+
+run_pipeline(input_data_path, output_path)
