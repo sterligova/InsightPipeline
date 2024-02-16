@@ -1,13 +1,22 @@
 from pyspark.sql import SparkSession
 
 
-def get_spark_session() -> SparkSession:
+def get_spark_session(name: str) -> SparkSession:
+    """
+    Create spark session 
+    
+    Args:
+        name: SparkSession name
+    """
     session = SparkSession.builder \
-                    .appName("AppName") \
+                    .appName(name) \
                     .getOrCreate()
     return session
 
 def stop_active_spark_session():
+    """
+    Stop active spark session 
+    """
     spark: SparkSession = SparkSession.getActiveSession()
     if spark:
        print('Closing spark session...')

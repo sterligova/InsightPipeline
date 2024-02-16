@@ -5,7 +5,7 @@ from src.insight_pipeline_package.transform import process_raw_data, process_odl
 from src.insight_pipeline_package.utils import get_spark_session
 
 def run_pipeline(config: PipelineConfig):
-       spark = get_spark_session()
+       spark = get_spark_session(config.session_name)
 
        print(f'Start reading data from: {config.input_data_file} ...')
        raw_data = read_data(config.input_data_file, spark)
@@ -20,7 +20,7 @@ def run_pipeline(config: PipelineConfig):
        print('ODS Data uploaded')
 
        print('Start processing DML data...')
-       dml_data = process_odl_data(ods_data, config)
+       dml_data = process_odl_data(ods_data, config.grb_column, config.agg_column)
        print('DML Data processed')
        
        print(f'Start uploading DML data to {config.output_dml_path}...')
