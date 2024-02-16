@@ -14,6 +14,12 @@ python3 -m build
 python3 ./run.py 
 ```
 
+## Run tests
+
+```bash
+python -m pytest tests/
+```
+
 ## Publish package
 
 1. Update package version in `pyproject.toml`

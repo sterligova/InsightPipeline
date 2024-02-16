@@ -19,3 +19,9 @@ def process_data(raw_data):
     return processed_data
 
 
+def agg_data(raw_data):
+    # Aggregation
+    agg_data = raw_data.groupBy("Country", "City", "Product") \
+                       .agg(sum("UnitsSold").alias("TotalUnitsSold"), sum("Revenue").alias("TotalRevenue"))
+
+    return agg_data
