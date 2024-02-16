@@ -15,5 +15,5 @@ def test_process_data_removes_duplicates():
 
     # Check if duplicates are removed
     assert processed_df.count() == raw_data.dropDuplicates().count()
+    stop_active_spark_session()
 
-stop_active_spark_session()
