@@ -9,7 +9,7 @@ def run_pipeline(config: PipelineConfig):
     All stages of the pipeline execution 
     
     Args:
-        : 
+      PipelineConfig  :  class with all the pipeline settings
     """
        spark = get_spark_session(config.session_name)
 
