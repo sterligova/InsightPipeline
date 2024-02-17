@@ -1,13 +1,17 @@
 import os
 import findspark
+import sys
 
 # Locate spark local testing
 findspark.init()
 findspark.find()
 
-from src.insight_pipeline_package.utils import stop_active_spark_session
-from src.insight_pipeline_package.spark_pipeline import run_pipeline
-from src.insight_pipeline_package.pipeline_config import PipelineConfig
+# add src to import scripts
+sys.path.insert(1, './src/')
+
+from insight_pipeline.utils import stop_active_spark_session
+from insight_pipeline.spark_pipeline import run_pipeline
+from insight_pipeline.pipeline_config import PipelineConfig
 
 # Setup pipeline
 current_dir = os.getcwd()

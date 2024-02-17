@@ -10,7 +10,7 @@ L'objectif principal de ce projet est de fournir un pipeline spark qui soit flex
 Pour faciliter l'utilisation du code et l'ajout rapide des modifications nécessaires à chaque projet, chaque étape du pipeline a été placée dans un fichier Python indépendant. 
 
 ```
-src\insight_pipeline_package
+src\insight_pipeline
  --ingest.py (fonction de lecture des données)
  --load.py (fonction de téléchargement des données )
  --pipeline_congig.py (une classe qui définit les paramètres de configuration: spark session name, raw data file location, path to operational data store (ods) layer, path to data mart layer, column name for data aggregation sum etc.
