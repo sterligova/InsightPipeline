@@ -6,4 +6,4 @@ def write_data(data, output_path):
         data:  DataFrame
         output_path: output files location
     """
-    data.write.mode("overwrite").parquet(output_path)
+    data.write.mode("overwrite").csv(output_path)
