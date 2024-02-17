@@ -1,8 +1,8 @@
-from src.insight_pipeline_package.pipeline_config import PipelineConfig
-from src.insight_pipeline_package.ingest import read_data
-from src.insight_pipeline_package.load import write_data
-from src.insight_pipeline_package.transform import process_raw_data, process_odl_data
-from src.insight_pipeline_package.utils import get_spark_session
+from insight_pipeline.pipeline_config import PipelineConfig
+from insight_pipeline.ingest import read_data
+from insight_pipeline.load import write_data
+from insight_pipeline.transform import process_raw_data, process_odl_data
+from insight_pipeline.utils import get_spark_session
 
 def run_pipeline(config: PipelineConfig):
        """

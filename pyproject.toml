@@ -1,6 +1,6 @@
 [project]
 name = "insight_pipeline"
-version = "0.0.6"
+version = "0.0.7"
 authors = [
   { name="Irina Sterligova", email="irinagruzde8a@gmail.com" },
 ]
