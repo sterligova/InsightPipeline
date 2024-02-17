@@ -62,13 +62,13 @@ Un workflow Github Actions vérifie si les tests sont validés correctement à c
 
 ## Dev section
 
-## Build package
+### Build package
 
 ```bash
 python3 -m build
 ```
 
-## Run in local
+### Run in local
 
 La version de démo a été utilisée pour tester localement l'opérabilité du code.
 Note, you need to install `spark`, `java 17` and `hadoop` locally
@@ -77,13 +77,13 @@ Note, you need to install `spark`, `java 17` and `hadoop` locally
 python3 ./demo.py 
 ```
 
-## Run tests
+### Run tests
 
 ```bash
 python -m pytest tests/
 ```
 
-## Publish package
+### Publish package
 
 1. Update package version in `pyproject.toml`
 2. Create git tag
