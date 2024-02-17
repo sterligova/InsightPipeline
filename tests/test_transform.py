@@ -1,4 +1,4 @@
-from create_test_session import get_test_data
+from tests.create_test_session import get_test_data
 from src.insight_pipeline.transform import process_raw_data, process_odl_data
 from src.insight_pipeline.utils import stop_active_spark_session
 
