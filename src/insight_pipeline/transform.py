@@ -4,12 +4,12 @@ def filter_dublicates_na(data):
     # Remove duplicates
     filtered_data = data.dropDuplicates()
 
-    # Replace empty values with Null
+    # Replace empty values with None 
     for column in filtered_data.columns:
         filtered_data = filtered_data.withColumn(column, \
             when(col(column) == "", None).otherwise(col(column)))
 
-    # Drop rows with mostly Null values
+    # Drop rows with Null, NaN values
     filtered_data = filtered_data.na.drop()
     return filtered_data
 
