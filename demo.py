@@ -17,9 +17,9 @@ from insight_pipeline.pipeline_config import PipelineConfig
 current_dir = os.getcwd()
 config = PipelineConfig()
 config.session_name = 'RunApp'
-config.input_data_file = f'{current_dir}/data/raw/2024-02-13/Book1.csv'
+config.input_data_file = f'{current_dir}/data/raw/2024-02-15/Book3.csv'
 config.output_ods_path = f'{current_dir}/data/ods/'
-config.output_dml_path = f'{current_dir}/data/dml/2024-02-13/'
+config.output_dml_path = f'{current_dir}/data/dml/2024-02-17/'
 config.agg_column = 'Revenue'
 config.grb_column = 'Product'
 
